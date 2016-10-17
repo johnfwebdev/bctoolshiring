@@ -61,7 +61,8 @@ $(function () {
                         [0, Highcharts.getOptions().colors[0]],
                         [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                     ]
-                }, {
+                }
+            }, {
                 name: 'Calls Handled',
                 data: data,
                 type: 'areaspline',
