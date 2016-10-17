@@ -4,13 +4,14 @@ $(function () {
             chart: {
                 events: {
                     load: function () {
-
                         // set up the updating of the chart every 5 seconds
-                        var series = this.series[0];
+                        var series = this.series[0],
+                            series2 = this.series[1];
                         setInterval(function () {
                             var x = (new Date()).getTime(), // current time
                                 y = Math.round(Math.random() * 500);
                             series.addPoint([x, y], true, true);
+                            series2.addPoint([x, y], true, true)
                         }, 2000);
                     }
                 }
@@ -35,10 +36,29 @@ $(function () {
                 selected: 0
             },
             title: {
-                text: 'Calls Offered'
+                text: 'Weekly Calls Offered'
             },
             series: [{
                 name: 'Calls Offered',
+                data: data,
+                type: 'areaspline',
+                threshold: null,
+                tooltip: {
+                    valueDecimals: 2
+                },
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                }, {
+                name: 'Calls Handled',
                 data: data,
                 type: 'areaspline',
                 threshold: null,
@@ -80,7 +100,7 @@ $(function () {
                 selected: 0
             },
             title: {
-                text: 'Calls Offered'
+                text: 'Monthly Calls Offered'
             },
             series: [{
                 name: 'Calls Offered',
@@ -129,7 +149,7 @@ $(function () {
                 selected: 0
             },
             title: {
-                text: 'Calls Offered'
+                text: 'Quarterly Calls Offered'
             },
             series: [{
                 name: 'Calls Offered',
