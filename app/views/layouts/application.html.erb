@@ -10,8 +10,7 @@
   </head>
 
   <body>
-    <%= link_to image_tag("BigCommerce_logo_dark.png"), "http://bigcommerce.com" %>
-    # => <img alt="BigCommerce" style="width: 250px; height: auto;" />
+    <%= link_to image_tag("BigCommerce_logo_dark.png", height: 'auto', width: '250'), "http://bigcommerce.com" %>
     <%= yield %>
     <%= javascript_include_tag "build_charts" %>
   </body>
