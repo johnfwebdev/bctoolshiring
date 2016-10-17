@@ -11,7 +11,11 @@ $(function () {
                             var x = (new Date()).getTime(), // current time
                                 y = Math.round(Math.random() * 500);
                             series.addPoint([x, y], true, true);
-                            series2.addPoint([x, y], true, true)
+                        }, 2000);
+                        setInterval(function () {
+                            var x = (new Date()).getTime(), // current time
+                                y = Math.round(Math.random() * 500);
+                            series2.addPoint([x, y], true, true);
                         }, 2000);
                     }
                 }
@@ -149,7 +153,7 @@ $(function () {
                 selected: 0
             },
             title: {
-                text: 'Quarterly Calls Offered'
+                text: 'Quarterly 3Calls Offered'
             },
             series: [{
                 name: 'Calls Offered',
